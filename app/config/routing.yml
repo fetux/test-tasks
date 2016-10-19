@@ -1,0 +1,16 @@
+chain_command:
+    resource: "@ChainCommandBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bar:
+    resource: "@BarBundle/Resources/config/routing.yml"
+    prefix:   /
+
+foo:
+    resource: "@FooBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
