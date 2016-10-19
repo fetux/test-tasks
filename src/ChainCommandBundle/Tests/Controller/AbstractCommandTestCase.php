@@ -17,6 +17,8 @@ abstract class AbstractCommandTestCase extends WebTestCase
 {
     /**
      * Runs a command and returns it output
+     * @param $client Client
+     * @param $command mixed
      */
     public function runCommand(Client $client, $command)
     {

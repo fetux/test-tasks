@@ -16,6 +16,8 @@ class ChainCommandExtension extends Extension
 {
     /**
      * {@inheritdoc}
+     * @param $config array()
+     * @param $container ContainerBuilder
      */
     public function load(array $configs, ContainerBuilder $container)
     {

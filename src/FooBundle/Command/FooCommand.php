@@ -12,8 +12,20 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Input\ArrayInput;
 use BarBundle\Command\BarCommand;
 
+/**
+*   FooCommand class
+*   Introduce the foo:hello console command.
+*   This command, if there were no other commands registered in its chain, would produce the following output:
+*
+*   $ php app/console foo:hello
+*   Hello from Foo!
+*
+*/
 class FooCommand extends ContainerAwareCommand
 {
+    /**
+    *   Set up command
+    */
     protected function configure()
     {
         // Configuring command name and description
@@ -21,7 +33,12 @@ class FooCommand extends ContainerAwareCommand
               ->setDescription('Adding to the command chain this Foo Command.');
 
     }
-    
+
+    /**
+    *   Execute the Foo command.
+    * @param $input InputInterface
+    * @param $output OutputInterface
+    */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         // Set text to display
@@ -31,9 +48,9 @@ class FooCommand extends ContainerAwareCommand
         $logger = $this->getContainer()->get('logger');
 
         $logger->info("foo:hello is a master command of a command chain that has registered member commands");
-        
+
         $logger->info("Executing foo:hello command itself first:");
-        
+
         $logger->info($commandTextOutput);
 
         // Set console output
@@ -51,7 +68,7 @@ class FooCommand extends ContainerAwareCommand
 
         // Set interactive false to allow command execute without user intervention
         $inputForJob->setInteractive(false);
-        
+
         // Set message into Job output
         $outputForJob->writeln($commandTextOutput);
 

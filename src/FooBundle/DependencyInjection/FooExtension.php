@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * FooBundle DependencyInjection FooExtension
+ */
 namespace FooBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -16,6 +18,8 @@ class FooExtension extends Extension
 {
     /**
      * {@inheritdoc}
+     * @param $configs array()
+     * @param $container ContainerBuilder
      */
     public function load(array $configs, ContainerBuilder $container)
     {
